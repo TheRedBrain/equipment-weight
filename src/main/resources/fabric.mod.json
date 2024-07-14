@@ -1,41 +1,41 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "equipmentweight",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Equipment Weight",
+	"description": "Adds a weight system for equipment.",
 	"authors": [
-		"Me!"
+		"TheRedBrain"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/TheRedBrain/equipment-weight"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"license": "MIT",
+	"icon": "assets/equipmentweight/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"com.github.theredbrain.equipmentweight.ExampleMod"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"com.github.theredbrain.equipmentweight.ExampleModClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"equipmentweight.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "equipmentweight.client.mixins.json",
 			"environment": "client"
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21",
-		"java": ">=21",
-		"fabric-api": "*"
+		"fabricloader": ">=0.14.20",
+		"minecraft": "1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"cloth-config": ">=11.1.106"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"variousstatuseffects": "*"
 	}
 }

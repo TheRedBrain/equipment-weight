@@ -1,4 +1,4 @@
-package com.example;
+package com.github.theredbrain.equipmentweight;
 
 import net.fabricmc.api.ClientModInitializer;
 
