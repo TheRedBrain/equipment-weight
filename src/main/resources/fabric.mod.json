@@ -15,10 +15,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.github.theredbrain.equipmentweight.ExampleMod"
+			"com.github.theredbrain.equipmentweight.EquipmentWeight"
 		],
 		"client": [
-			"com.github.theredbrain.equipmentweight.ExampleModClient"
+			"com.github.theredbrain.equipmentweight.EquipmentWeightClient"
 		]
 	},
 	"mixins": [
