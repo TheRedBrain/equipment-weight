@@ -13,12 +13,9 @@ public class ServerConfig implements ConfigData {
     @Comment("""
 			WIP
 			""")
-    public LinkedHashMap<Float, String> weight_effects = new LinkedHashMap<>() {{
-        put(0.2F, "minecraft:strength");
-        put(0.5F, "minecraft:haste");
-        put(0.4F, "minecraft:regeneration");
-        put(1.0F, "minecraft:glowing");
-    }};
+    public LinkedHashMap<Float, String> weight_effects = new LinkedHashMap<>() {
+
+    };
     public ServerConfig() {
 
     }

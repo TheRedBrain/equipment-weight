@@ -27,11 +27,7 @@ public class EquipmentWeight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Added weight to your equipment!");
 
 		// Config
 		AutoConfig.register(ServerConfigWrapper.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
@@ -65,8 +61,5 @@ public class EquipmentWeight implements ModInitializer {
 
 	public static Identifier identifier(String path) {
 		return Identifier.of(MOD_ID, path);
-	}
-	public static void info(String string) {
-		LOGGER.info(string);
 	}
 }

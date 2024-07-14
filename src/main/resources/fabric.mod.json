@@ -34,8 +34,5 @@
 		"java": ">=17",
 		"fabric-api": "*",
 		"cloth-config": ">=11.1.106"
-	},
-	"suggests": {
-		"variousstatuseffects": "*"
 	}
 }
