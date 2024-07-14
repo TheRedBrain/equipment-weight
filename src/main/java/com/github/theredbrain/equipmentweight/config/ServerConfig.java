@@ -11,11 +11,22 @@ import java.util.LinkedHashMap;
 )
 public class ServerConfig implements ConfigData {
     @Comment("""
-			WIP
+			When the ratio of 'generic.equipment_weight' and 'generic.max_equipment_weight' is equal or greater than
+			a value, and the corresponding string is a valid identifier of a status effect, that status effect
+			is applied.
+			Only one status effect is applied.
+			
+			Example:
+			"weight_effects": {
+				"0.2": "minecraft:strength",
+				"0.5": "minecraft:haste",
+				"0.4": "minecraft:regeneration",
+				"1.0": "minecraft:glowing"
+			}
 			""")
-    public LinkedHashMap<Float, String> weight_effects = new LinkedHashMap<>() {
+    public LinkedHashMap<String, String> weight_effects = new LinkedHashMap<>() {{
 
-    };
+	}};
     public ServerConfig() {
 
     }

@@ -95,7 +95,7 @@ public abstract class LivingEntityMixin extends Entity implements AffectedByEqui
 			if (equipment_load == this.equipmentweight$getOldEquipmentWeightRatio()) {
 				return;
 			}
-			List<Float> list = new ArrayList<>(serverConfig.weight_effects.keySet());
+			List<String> list = new ArrayList<>(serverConfig.weight_effects.keySet());
 			List<StatusEffect> effectsToBeRemoved = new ArrayList<>();
 			StatusEffect new_weight_status_effect = null;
 			StatusEffect remove_this_status_effect = null;
@@ -103,10 +103,11 @@ public abstract class LivingEntityMixin extends Entity implements AffectedByEqui
 			String effect = null;
 			String current_effect = null;
 
-			for (float f : list) {
+			for (String key : list) {
+				float f = Float.parseFloat(key);
 				if (equipment_load >= f && f >= current_threshold) {
-					effect = serverConfig.weight_effects.get(f);
-					current_effect = serverConfig.weight_effects.get(current_threshold);
+					effect = serverConfig.weight_effects.get(key);
+					current_effect = serverConfig.weight_effects.get(String.valueOf(current_threshold));
 					if (effect != null) {
 						new_weight_status_effect = Registries.STATUS_EFFECT.get(Identifier.tryParse(effect));
 					}
@@ -115,7 +116,7 @@ public abstract class LivingEntityMixin extends Entity implements AffectedByEqui
 					}
 					current_threshold = f;
 				} else {
-					effect = serverConfig.weight_effects.get(f);
+					effect = serverConfig.weight_effects.get(key);
 					if (effect != null) {
 						remove_this_status_effect = Registries.STATUS_EFFECT.get(Identifier.tryParse(effect));
 					}
