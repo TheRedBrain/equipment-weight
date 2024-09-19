@@ -6,10 +6,8 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 public class EquipmentWeightClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-
-		// Packets
-		ClientPlayNetworking.registerGlobalReceiver(EquipmentWeight.ServerConfigSync.ID, (client, handler, buf, responseSender) -> {
-			EquipmentWeight.serverConfig = EquipmentWeight.ServerConfigSync.read(buf);
+		ClientPlayNetworking.registerGlobalReceiver(EquipmentWeight.ServerConfigSyncPacket.PACKET_ID, (payload, context) -> {
+			EquipmentWeight.serverConfig = payload.serverConfig();
 		});
 	}
 }
